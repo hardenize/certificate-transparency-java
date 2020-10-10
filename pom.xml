@@ -134,7 +134,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
+            <version>4.5.13</version>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -211,8 +211,7 @@
                         <phase>generate-sources</phase>
                         <configuration>
                             <target>
-                                <property name="protoc.filename"
-                                          value="protoc-${protobuf.version}-${os.detected.classifier}.exe"/>
+                                <property name="protoc.filename" value="protoc-${protobuf.version}-${os.detected.classifier}.exe"/>
                                 <property name="protoc.filepath" value="${project.build.directory}/${protoc.filename}"/>
                                 <chmod file="${protoc.filepath}" perm="ugo+rx"/>
                                 <mkdir dir="${protobuf.output.directory}"/>
@@ -221,8 +220,7 @@
                                         <include name="**/*.proto"/>
                                     </fileset>
                                 </path>
-                                <pathconvert pathsep=" " property="protobuf.input.filepaths"
-                                             refid="protobuf.input.filepaths.path"/>
+                                <pathconvert pathsep=" " property="protobuf.input.filepaths" refid="protobuf.input.filepaths.path"/>
                                 <exec executable="${protoc.filepath}" failonerror="true">
                                     <arg value="-I"/>
                                     <arg value="${protobuf.input.directory}"/>
